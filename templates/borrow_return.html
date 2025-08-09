@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="color:#DAFF00;">Borrow / Return Book</h1>
+
+<!-- Include Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<form method="post" class="card p-3">
+    <div class="mb-3">
+        <label>User</label>
+        <select name="user_id" class="form-select select2" required>
+            <option value="" selected disabled>-- Select a user --</option>
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Book</label>
+        <select name="book_id" class="form-select select2" required>
+            <option value="" selected disabled>-- Select a book --</option>
+            {% for book in books %}
+                <option value="{{ book.id }}">{{ book.title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label>Action</label>
+        <select name="action" class="form-select" required>
+            <option value="" selected disabled>-- Select an action --</option>
+            <option value="borrow">Borrow</option>
+            <option value="return">Return</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if message %}
+    <div class="alert alert-info mt-3">{{ message }}</div>
+{% endif %}
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Include Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.select2').select2({
+            width: '100%',
+            placeholder: "Search and select...",
+            allowClear: true
+        });
+    });
+</script>
+{% endblock %}

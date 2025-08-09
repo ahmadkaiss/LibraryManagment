@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="color:#DAFF00;">Library Stats</h1>
+<ul class="list-group">
+    <li class="list-group-item">📚 Total Books: <strong>{{ total_books }}</strong></li>
+    <li class="list-group-item">📖 Available Books: <strong>{{ available_books }}</strong></li>
+    <li class="list-group-item">👤 Total Users: <strong>{{ total_users }}</strong></li>
+</ul>
+{% endblock %}

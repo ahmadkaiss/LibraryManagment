@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="color:#DAFF00;">Search Books</h1>
+<form method="post" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="keyword" class="form-control" placeholder="Enter title, author, or genre">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
+{% if results %}
+<h2 style="color:#DAFF00;">Results</h2>
+<div class="list-group">
+    {% for book in results %}
+    <div class="list-group-item">
+        <strong>{{ book.title }}</strong> by {{ book.author }} ({{ book.year }}) - {{ book.genre }}&nbsp;
+        <strong>Copies: </strong>{{ book.available_copies }} / {{ book.total_copies }}&nbsp;
+        <strong>Shelf location:</strong> 📍 {{ book.location or 'Not specified' }}
+    </div>
+    {% endfor %}
+</div>
+{% elif results is not none %}
+<div class="alert alert-warning">No results found.</div>
+{% endif %}
+{% endblock %}

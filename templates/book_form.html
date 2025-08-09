@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="color:#DAFF00;">{{ action }} Book</h1>
+<form method="post" class="card p-3">
+    <div class="mb-3">
+        <label>Title</label>
+        <input type="text" name="title" value="{{ book.title or '' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Author</label>
+        <input type="text" name="author" value="{{ book.author or '' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Year</label>
+        <input type="text" name="year" value="{{ book.year or '' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Genre</label>
+        <input type="text" name="genre" value="{{ book.genre or '' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Position in Library</label>
+        <input type="text" name="position" value="{{ book.position or '' }}" class="form-control" placeholder="e.g. Shelf A3, Row 2">
+    </div>
+    <div class="mb-3">
+        <label>Total Copies</label>
+        <input type="number" name="total_copies" value="{{ book.total_copies or 1 }}" class="form-control">
+    </div>
+    {% if action == 'Edit' %}
+    <div class="mb-3">
+        <label>Available Copies</label>
+        <input type="number" name="available_copies" value="{{ book.available_copies }}" class="form-control">
+    </div>
+    {% endif %}
+    <button type="submit" class="btn btn-success">{{ action }} Book</button>
+</form>
+{% endblock %}

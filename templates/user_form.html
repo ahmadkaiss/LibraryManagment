@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="color:#DAFF00;">{{ action }} User</h1>
+<form method="post" class="card p-3">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" value="{{ user.name or '' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" value="{{ user.email or '' }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Phone</label>
+        <input type="text" name="phone" value="{{ user.phone or '' }}" class="form-control"
+               placeholder="e.g. 123-456-7890">
+    </div>
+    <div class="mb-3">
+        <label>Age</label>
+        <input type="number" name="age" value="{{ user.age or '' }}" class="form-control" min="0" max="120"
+               placeholder="Enter age">
+    </div>
+    <button type="submit" class="btn btn-success">{{ action }} User</button>
+</form>
+{% endblock %}

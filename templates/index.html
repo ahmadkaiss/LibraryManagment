@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+    <h1 class="mb-4" style="color:#DAFF00;">Library Dashboard</h1>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <a href="{{ url_for('list_books') }}" class="btn btn-primary btn-lg w-100">📖 Manage Books</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ url_for('list_users') }}" class="btn btn-secondary btn-lg w-100">👤 Manage Users</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ url_for('borrow_return') }}" class="btn btn-success btn-lg w-100">📚 Borrow / Return</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ url_for('stats') }}" class="btn btn-warning btn-lg w-100">📊 View Stats</a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ url_for('search_books') }}" class="btn btn-info btn-lg w-100">🔍 Search Books</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+F02E00
