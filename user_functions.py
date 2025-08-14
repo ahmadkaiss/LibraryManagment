@@ -20,7 +20,7 @@ users = [
     }
 ]
 
-user_id_counter = 1
+user_id_counter = 3
 
 
 def manage_users():
@@ -149,3 +149,4 @@ def view_stats():
     print(f"Total Books: {total_books}")
     print(f"Available Books: {available_books}")
     print(f"Total Users: {total_users}")
+
