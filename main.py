@@ -6,7 +6,7 @@ from user_functions import *
 def main_menu():
     while True:
         print("""
-===== DeployNova Library Manager =====
+===== Library Manager =====
 1. Manage Books
 2. Manage Users
 3. Borrow a Book
@@ -38,3 +38,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
